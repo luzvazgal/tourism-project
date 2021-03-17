@@ -42,12 +42,6 @@ function bargraph(is_selected){
         outbound.push(dict_2.map(rec=>{return rec[4]}).reduce((a, b) => a + b, 0)); //2018 sum
 
 
-   }else{
-       country = '';
-       years = [2014,2015,2016,2017,2018]
-   }
-
-    
 
     let trace1_Bar={
         x:years,
@@ -100,7 +94,11 @@ function bargraph(is_selected){
 
     Plotly.newPlot('bar_graph', data, layout)
 
-};
+}else{
+    country = '';
+    years = [2014,2015,2016,2017,2018]
+}
+}
 
 //Load page
 bargraph(false) //Not displaying anything

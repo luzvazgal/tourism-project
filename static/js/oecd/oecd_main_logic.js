@@ -35,8 +35,8 @@ function setCountryData(){
  * Getting countries list to add them into drop-down menu for user's selection
  */
 function getData(){
-
     let select = d3.select("#Country_select");
+    
     console.log("entro")
 
     d3.json('/turismo').then(countryJSON=>{
@@ -44,7 +44,6 @@ function getData(){
         data = countryJSON;
         //Getting countries list from data
         let countries_list = countryJSON.map(record=>{
-            
             return record['name'];
         } )
 
@@ -59,11 +58,15 @@ function getData(){
         )
     }
     )
-   
-}
+
+};
+
+//Event listener to detect when page is loading
+d3.select(window).on("load", getData);
 
 //Event listener. When user chooses a country from list
 d3.selectAll("#Country_select").on('change', function(){
+    console.log("select change")
 
    //Sets all country info to be consumed according to country selected
     setCountryData( );

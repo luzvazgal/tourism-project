@@ -5,6 +5,7 @@ from bson.json_util import dumps, loads
 import pymongo
 
 
+
  #to change depend of file
 # import atlas_obscura_scraper_psL #to change depend file
 
@@ -40,6 +41,19 @@ def coordenadas():
 def lugares():
     places=atlas_collection.find()
     return dumps(list(places))
+
+
+@app.route('/oecd')
+def oecd():
+    return render_template('oecd.html')
+
+
+@app.route('/tableau')
+def tableau():
+    return render_template('tableau.html')
+
+    
+
 
 if __name__ == "__main__":
     app.run(debug=True)

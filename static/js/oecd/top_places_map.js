@@ -1,9 +1,10 @@
+//Layer group to add all Popups related to Top Places
+let top_places_cluster = new L.LayerGroup();    //Adding all geoJSON layers in a group
+
+//draw_Top_Places_Map();
 
 //Map definition
 var top_places_map = L.map('top_places_map').setView(default_coords,default_zoom);
-
-//Layer group to add all Popups related to Top Places
-let top_places_cluster = new L.LayerGroup();    //Adding all geoJSON layers in a group
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',

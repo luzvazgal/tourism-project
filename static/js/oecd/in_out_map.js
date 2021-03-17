@@ -5,6 +5,8 @@ let geoJSON_selected_country;
 
 let geoJSON_layer_group = new L.LayerGroup();    //Adding all geoJSON layers in a group
 
+//draw_In_Out_Map();
+
 //Map definition
 let in_out_map = L.map('in_out_map').setView(default_coords,default_zoom);
 

@@ -3,6 +3,42 @@ let already_painted = [];   //To track countries already painted to determine wh
 let colors = Object.values(colors_dict);
 let labels = Object.keys(colors_dict);
 
+function draw_In_Out_Map(){
+    console.log("draw in out")
+    let in_out_map = L.map('in_out_map').setView(default_coords,default_zoom);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/light-v10',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: MAPBOX_KEY
+    }).addTo(in_out_map);
+
+    //in_out_map.invalidateSize();
+    
+    //Adding legend to map
+    addLegend().addTo(in_out_map);
+
+}
+
+function draw_Top_Places_Map(){
+    console.log( "draw top places")
+    var top_places_map = L.map('top_places_map').setView(default_coords,default_zoom);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: MAPBOX_KEY
+}).addTo(top_places_map);
+
+}
+
+
 /**
  * Add legend in map to determine colors
  */

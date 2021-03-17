@@ -8,6 +8,8 @@ let colors_dict = {
     'In/Out': '#0B5345'
 }
 
+console.log('api')
 
 const default_coords = [0,0];
 const default_zoom = 1;
+
