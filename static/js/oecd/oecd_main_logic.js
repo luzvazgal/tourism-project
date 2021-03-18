@@ -90,6 +90,10 @@ d3.selectAll("#Country_select").on('change', function(){
         //Adds top places from country to map
         TopPlacesMap_init();
 
+        //Print table in page according to selected country
+        //console.log(inbound_countries)
+        //print_table();
+
         }   
     )
     .catch(error=>console.log(error))

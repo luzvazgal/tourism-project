@@ -19,17 +19,36 @@ Files taken from:
 
 ## Project structure
 
+### Data layer
 * **data/** 
-* **static/js/**
+    * **oecd_data**: data from OECD countries: # of visitors, top inbound and outbound countries
+    * **wef_data**: data from the World Economic forum: indices data to build machine learning model
+    * **model**: machine learning model results exported to CSV to be consumed by Public Tableau
+
+### Application Layer
+* **static/js/oecd/**
     * **config.js**: contains links to geoJSon file to all countries boundaries
     * **data_temp.js**: dummy data to work on Javascript files
-    * **data**: data CSV files for each analyzed country
-    * **in_out_map**: Javascript file to display a user selected country and their corresponding Inbound/Outbound tourism 
-    using Leaflet and geoJSON
-    * **css/**: style files
-* **templates**
+    * **in_out_map**: Javascript file to display a user selected country and their corresponding Inbound/Outbound tourism using Leaflet and geoJSON
+
+* **jupyter_files**
+    * **etl** Jupyter notebooks to do ETL from current Mongo DB and WEF Excel files to get model data 
+    * **panelDataAnalysis** Jupyter notebooks to do model analysis
     
-    * **index.html**: presentation file having countries displayed in a drop-down list for user selection. 
+* **output**: data CSV files for each analyzed country
+
+
+### Presentation Layer
+* **templates**
+    * **index.html** Main presentation file including a two option menu to present OECD analysis and Tableau based reports predictions
+    * **oecd.html**: presentation file having countries displayed in a drop-down list for user selection. 
+    * **tableau.html** Containing Tableau HTML code to present model
+    * **ModelsAnalysis.html** Have all explanation of model analysis
 * **app.py**: Python file to render files according to user's introduced URL
+
+
+* **static/js/oecd/**
+    * **css/**: style files
+
 * **/**: all Python files
 

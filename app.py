@@ -52,6 +52,10 @@ def oecd():
 def tableau():
     return render_template('tableau.html')
 
+@app.route('/model')
+def model():
+    return render_template('ModelsAnalysis.html')
+
     
 
 
